@@ -1,9 +1,10 @@
 <?php 
     $title = 'Daftar';
     require_once 'includes/header.php'; ?>
-
-<h1 class="text-center">APLIKASI AIR MINUM ISI ULANG </h1>
-<h1 class="text-center">FORM PENDAFTARAN AKUN </h1>
+<h1 class="w3-text-dark text-center" style="text-shadow:2px 2px 0 #FFF">
+    <b>APLIKASI AIR MINUM ISI ULANG</b></h1>
+<h1 class="w3-text-dark text-center" style="text-shadow:2px 2px 0 #FFF">
+    <b>FORM PENDAFTARAN AKUN</b></h1>    
 <br>
     <form method="post" action="daftar_berhasil.php" enctype="multipart/form-data">
         <div class="form-group">
@@ -50,7 +51,8 @@
         <button type="submit" name="daftar" class="btn btn-primary btn-block">Daftar</button>
     </form>
     <br>
-    <small id="index" class="form-text text-muted text-center">Sudah punya akun?</small>
+    <h3 class="w3-text-white text-center" style="text-shadow:2px 2px 0 #444">
+    <b>Sudah punya akun?</b></h3>
     <br>
     <a href="Index.php" class="Index">
         <button type="button" name="Index" class="btn button btn-primary btn-block"> Login</button>  

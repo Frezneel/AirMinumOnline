@@ -33,9 +33,13 @@
         <div class="form-group">
             <label for="alamat">Alamat Lengkap (Tujuan)</label>
             <input required type="text" class="form-control" id="alamat" name="alamat">
-            <small id="alamat" class="form-text text-muted">Harap masukkan alamat tujuan pengantaran selengkap-lengkapnya.</small>
+            <small id="alamat" class="form-text text-muted">*Harap masukkan alamat tujuan pengantaran selengkap-lengkapnya.</small>
         </div>
-        
+        <div class="form-group">
+            <label for="catatan">Catatan tambahan</label>
+            <input type="text" class="form-control" id="catatan" name="catatan">
+            <small id="catatan" class="form-text text-muted">*Beri catatan untuk pengantar (opsional).</small>
+        </div>
         <button type="submit" name="pesan" class="btn btn-primary btn-block">Pesan</button>
     </form>
 <br>

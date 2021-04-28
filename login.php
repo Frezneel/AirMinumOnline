@@ -82,7 +82,7 @@
                                         <br>
                                         <small id="Daftar" class="form-text text-muted text-center">Belum punya akun?</small>
                                         <br>
-                                        <a href="Daftar.php" class="Daftar">
+                                        <a href="daftar.php" class="Daftar">
                                             <button type="Daftar" name="Daftar" class="btn button btn-primary btn-block"> Daftar</button>  
                                         </a>    
                                     </div>
