@@ -3,8 +3,6 @@
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
     require_once 'includes/auth_check.php';
-    if(!isset($_SESSION['username'])){ // Jika session username tidak ada berarti dia belum login
-        header("location: login.php");} // Kita Redirect ke halaman login.php
 ?>
 
 
