@@ -54,8 +54,8 @@
     <h3 class="w3-text-white text-center" style="text-shadow:2px 2px 0 #444">
     <b>Sudah punya akun?</b></h3>
     <br>
-    <a href="Index.php" class="Index">
-        <button type="button" name="Index" class="btn button btn-primary btn-block"> Login</button>  
+    <a href="login.php" class="button">
+        <button type="button" name="login" class="btn button btn-primary btn-block"> Login</button>  
     </a> 
 <br>
 <br>
