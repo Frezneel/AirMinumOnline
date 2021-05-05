@@ -8,21 +8,6 @@
     }
     
 
-    // //If data was submitted via a form POST request, then...
-    // if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    //     $username = strtolower(trim($_POST['username']));
-    //     $password = $_POST['password'];
-    //     $new_password = md5($password.$username);
-
-    //     $result = $user->getUser($username,$new_password);
-    //     if(!$result){
-    //         echo '<div class="alert alert-danger">Username or Password is incorrect! Please try again. </div>';
-    //     }else{
-    //         $_SESSION['username'] = $username;
-    //         $_SESSION['userid'] = $result['akun_id'];
-    //         header("Location: index.php");
-    //     }
-    // }
 ?>
 <style>
 .button {
@@ -83,7 +68,7 @@
                                         <small id="Daftar" class="form-text text-muted text-center">Belum punya akun?</small>
                                         <br>
                                         <a href="daftar.php" class="Daftar">
-                                            <button type="Daftar" name="Daftar" class="btn button btn-primary btn-block"> Daftar</button>  
+                                            <button type="Daftar" name="Daftar" class="btn button btn-block"> Daftar</button>  
                                         </a>    
                                     </div>
                                 </div>

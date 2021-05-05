@@ -6,42 +6,23 @@
 ?>
 
 
-<h1 class="text-center">Selamat datang pelanggan </h1>
-<h1 class="text-center">APLIKASI AIR MINUM ISI ULANG </h1>
+<h1 class="text-center" style="text-shadow:1px 2px 0 #fff">Selamat datang pelanggan  </h1>
+<h1 class="text-center" style="text-shadow:1px 2px 0 #fff">APLIKASI AIR MINUM ISI ULANG </h1>
 <br>
-<form method="post" action="pemesanan_berhasil.php" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="namadepan">Nama Depan</label>
-            <input required type="text" class="form-control" id="namadepan" name="namadepan">
+<div class="card-deck">
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="pesan_gambar.png" alt="Gambar Pesan">
+        <div class="card-body">
+            <a href="pesan.php" class="btn btn-primary btn-block">Menu Form Pemesanan</a>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="namabelakang">Nama Belakang</label>
-            <input required type="text" class="form-control" id="namabelakang" name="namabelakang">
+    </div>
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="pesan_gambar.png" alt="Gambar List Pemesanan">
+        <div class="card-body">
+            <a href="listpemesanan.php" class=" btn btn-primary btn-block">Menu List Pemesanan</a>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="tgps">Tanggal Pemesanan</label>
-            <input type="text" class="form-control" id="tgps" name="tgps">
-        </div>
-        <br>
-        <div class="form-groupform-group">
-            <label for="nohp">Nomor HP yang bisa dihubungi</label>
-            <input type="text" class="form-control" id="nohp"  name="nohp">
-        </div>
-        <br/>
-        <div class="form-group">
-            <label for="alamat">Alamat Lengkap (Tujuan)</label>
-            <input required type="text" class="form-control" id="alamat" name="alamat">
-            <small id="alamat" class="form-text text-muted">*Harap masukkan alamat tujuan pengantaran selengkap-lengkapnya.</small>
-        </div>
-        <div class="form-group">
-            <label for="catatan">Catatan tambahan</label>
-            <input type="text" class="form-control" id="catatan" name="catatan">
-            <small id="catatan" class="form-text text-muted">*Beri catatan untuk pengantar (opsional).</small>
-        </div>
-        <button type="submit" name="pesan" class="btn btn-primary btn-block">Pesan</button>
-    </form>
+    </div>
+</div>
 <br>
 <br>
 <br>

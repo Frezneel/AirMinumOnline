@@ -42,10 +42,10 @@
           <?php 
               if(!isset($_SESSION['username'])){
           ?>
-            <a class="nav-item nav-link text-dark" href="login.php">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link text-dark btn btn-warning" href="login.php">Login <span class="sr-only">(current)</span></a>
           <?php } else { ?>
-            <a class="nav-item nav-link text-dark" href="#"><span>Hallo <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link text-dark" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link text-dark" href="#"><span>Hallo <?php echo $_SESSION['username'] ?> </span> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link text-dark btn btn-danger" href="logout.php">Logout <span class="sr-only">(current)</span></a>
           <?php } ?>
         </div>
       </div>
