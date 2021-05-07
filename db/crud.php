@@ -99,6 +99,18 @@
            
         }
 
+        public function getTagihan(){
+            try{
+                $sql = "SELECT * FROM `tagihan`";
+                $result = $this->db->query($sql);
+                return $result;
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+            
+        }
+
         public function getNamaTagihan($id_tagihan){
             try{
                 $sql = "SELECT * FROM `tagihan` where id_tagihan = :id";

@@ -5,6 +5,7 @@
 
     if(isset($_POST['daftar'])){
         //extract values from the $_POST array
+        $username = $_POST['username'];
         $pass = $_POST['password'];
         $namadepan = $_POST['namadepan'];
         $namabelakang = $_POST['namabelakang'];
