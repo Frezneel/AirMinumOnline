@@ -15,28 +15,29 @@
         <a class="btn btn-success" href="pesan.php">Buat Pesanan Baru</a>
     </p>
 
-    <table class="table" style="background-color: white;">
+    <table class="table" style="background-color: #00BFE5;">
         <tr>
             <th>Username</th>
             <th>Name</th>
             <th>Tanggal Pesan</th>
-            <th>Jumlah Galon</th>
+            <th>Jasa</th>
             <th>No HP</th>
             <th>Alamat</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
-        </thead>
-        <tbody>
+        </thead">
+        <tbody style="background-color: white ;">
         <?php while($r = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
            <tr>
                 <td><?php echo $r['username'] ?></td>
                 <td><?php echo $r['namadepan']?> <?php echo $r['namabelakang'] ?></td>
                 <td><?php echo $r['tgps'] ?></td>
-                <td><?php echo $r['jml_galon'] ?></td>
+                <td><?php echo $r['nama_tagihan'] ?></td>
                 <td><?php echo $r['nohp'] ?></td>
                 <td><?php echo $r['alamat'] ?></td>
-                <td> </td>
+                <td> NULL </td>
+                <td> NULL </td>
            </tr> 
         <?php }?>
         </tbody> 

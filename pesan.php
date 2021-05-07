@@ -3,14 +3,16 @@
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
     require_once 'includes/auth_check.php';
+
+    $results = $crud->getSpecialties();
 ?>
-<div class="card-header">
+<div class="card-header" style="background-color: #00BFE5">
     <h3 class="text-center">
     Form Pemesanan <b><?php echo $_SESSION['username'] ?></b>
     </h3>
 </div>
-<div class="card-body">
-<form method="post" action="pemesanan_berhasil.php" enctype="multipart/form-data">
+<div class="card-body" style="color: black; background-color: white">
+    <form method="post" action="pemesanan_berhasil.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="namadepan">Nama Depan</label>
             <input required type="text" class="form-control" id="namadepan" name="namadepan">
@@ -27,8 +29,12 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="jml_galon">Jumlah Galon yang diisi ulang</label>
-            <input required type="text" class="form-control" id="jml_galon" name="jml_galon">
+            <label for="tagihan">Pilih Jasa</label>
+            <select class="form-control" id="tagihan" name="tagihan">
+                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
+                   <option value="<?php echo $r['id_tagihan'] ?>"><?php echo $r['nama_tagihan']; ?></option>
+                <?php }?>
+            </select>
         </div>
         <br>
         <div class="form-group">

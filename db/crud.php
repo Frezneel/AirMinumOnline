@@ -60,10 +60,10 @@
         }
 
         // function to insert a new record into the pesanan database
-        public function insertPesanan($namadepan_p,$namabelakang_p,$tgps,$jml_galon,$nohp_p,$alamat_p){
+        public function insertPesanan($namadepan_p,$namabelakang_p,$tgps,$tagihan,$nohp_p,$alamat_p){
             try {
                 // define sql statement to be executed
-                $sql = "INSERT INTO pesanan (username,namadepan,namabelakang,tgps,jml_galon,nohp,alamat) VALUES (:username, :namadepan, :namabelakang, :tgps, :jml_galon, :nohp, :alamat)";
+                $sql = "INSERT INTO pesanan (username,namadepan,namabelakang,tgps,id_tagihan,nohp,alamat) VALUES (:username, :namadepan, :namabelakang, :tgps, :tagihan, :nohp, :alamat)";
                 //prepare the sql statement for execution
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
@@ -71,7 +71,7 @@
                 $stmt->bindparam(':namadepan',$namadepan_p);
                 $stmt->bindparam(':namabelakang',$namabelakang_p);
                 $stmt->bindparam(':tgps',$tgps);
-                $stmt->bindparam(':jml_galon',$jml_galon);
+                $stmt->bindparam(':tagihan',$tagihan);
                 $stmt->bindparam(':nohp',$nohp_p);
                 $stmt->bindparam(':alamat',$alamat_p);
 
@@ -87,7 +87,7 @@
 
         public function getPesanan(){
             try{
-                $sql = "SELECT * FROM pesanan where username like :username order by tgps desc";
+                $sql = "SELECT * FROM `pesanan` a inner join tagihan s on a.id_tagihan = s.id_tagihan WHERE username like :username order by tgps desc";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':username',$_SESSION['username']);
                 $stmt->execute();
@@ -98,6 +98,22 @@
            }
            
         }
+
+        public function getNamaTagihan($id_tagihan){
+            try{
+                $sql = "SELECT * FROM `tagihan` where id_tagihan = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id', $id_tagihan);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+            
+        }
+
 
     }
 ?>
