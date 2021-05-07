@@ -4,7 +4,7 @@
     require_once 'db/conn.php';
     require_once 'includes/auth_check.php';
 
-    $results = $crud->getSpecialties();
+    $results = $crud->getTagihan();
 ?>
 <div class="card-header" style="background-color: #00BFE5">
     <h3 class="text-center">
