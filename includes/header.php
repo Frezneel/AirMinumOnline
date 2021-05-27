@@ -19,6 +19,7 @@
 		body
 		{
 			background-image:url('bg.png');
+      background-repeat: no-repeat;
       background-size:cover;
 		}
     .bg-gray {

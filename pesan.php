@@ -35,6 +35,7 @@
                    <option value="<?php echo $r['id_tagihan'] ?>"><?php echo $r['nama_tagihan']; ?></option>
                 <?php }?>
             </select>
+                        
         </div>
         <br>
         <div class="form-group">

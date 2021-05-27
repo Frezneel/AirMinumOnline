@@ -3,8 +3,11 @@
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
     require_once 'includes/auth_check.php';
+    
+    if($_SESSION['id_posisi'] == 1){
+        header("Location: admin.php");
+    }
 ?>
-
 
 <h1 class="text-center" style="text-shadow:1px 2px 0 #fff">Selamat datang pelanggan  </h1>
 <h1 class="text-center" style="text-shadow:1px 2px 0 #fff">APLIKASI AIR MINUM ISI ULANG </h1>

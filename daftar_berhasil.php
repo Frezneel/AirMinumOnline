@@ -44,6 +44,11 @@
             <p class="card-text">
             <?php echo $_POST['alamat'] ?>
             </p>
+            <p class="card-text">
+            <a href="login.php" class="login">
+               <button type="button" name="login" class="btn button btn-block btn-success"> Login</button>  
+            </a>
+            </p>
         </div>
     </div>
 

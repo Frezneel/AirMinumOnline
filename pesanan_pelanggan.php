@@ -1,20 +1,16 @@
 <?php
-    $title = 'View Pemesanan'; 
+    $title = 'Pesanan Pelanggan'; 
 
     require_once 'includes/header.php'; 
     require_once 'includes/auth_check.php';
     require_once 'db/conn.php'; 
 
-    // Mengambil Pesanan Pelanggan
-    $stmt = $crud->getPesanan();
+    // Mengambil Semua Pesanan
+    $stmt = $crud->getPesananPelanggan();
     
 ?>
 
 <div class="container">
-    <p>
-        <a class="btn btn-success" href="pesan.php">Buat Pesanan Baru</a>
-    </p>
-
     <table class="table" style="background-color: #00BFE5;">
         <tr>
             <th>Username</th>
@@ -25,6 +21,7 @@
             <th>Alamat</th>
             <th>Status</th>
             <th>Total Tagihan</th>
+            <th>Action</th>
         </tr>
         </thead">
         <tbody style="background-color: white ;">
@@ -38,6 +35,12 @@
                 <td><?php echo $r['alamat'] ?></td>
                 <td><?php echo $r['nama_status'] ?></td>
                 <td> null </td>
+                <td>
+                    <a href="update.php?id=<?php echo $r['id_pesan'] ?>" class="btn btn-warning">Edit</a>
+                    </br>
+                    <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['id_pesan'] ?>" class="btn btn-danger">Delete</a>
+                </td>
+                
            </tr> 
         <?php }?>
         </tbody> 

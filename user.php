@@ -15,10 +15,16 @@ echo '<h1 class="text-center text-success" > Anda Sukses Terdaftar </h1>';
 if( !empty($data)){ // Jika tidak sama dengan empty (kosong)
   $_SESSION['username'] = $data['username']; // Set session untuk username (simpan username di session)
   $_SESSION['nama'] = $data['nama']; // Set session untuk nama (simpan nama di session)
+  $_SESSION['id_posisi'] = $data['id_posisi']; // set session untuk posisi (simpan posisi di session)
   
   setcookie("message","delete",time()-1); // Kita delete cookie message
-  
-  header("location: index.php"); // Kita redirect ke halaman index.php
+  if($data['id_posisi'] == "2"){
+    header("location: index.php"); // Kita redirect ke halaman index.php
+  }
+  else{
+    header("location: admin.php"); // Kita redirect ke halaman admin.php
+  }
+ 
 }else{ // Jika $data nya kosong
   // Buat sebuah cookie untuk menampung data pesan kesalahan
   echo '<h1 class="text-center text-success" > Gagal Login</h1>';
