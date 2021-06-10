@@ -34,7 +34,7 @@
                 <td><?php echo $r['nohp'] ?></td>
                 <td><?php echo $r['alamat'] ?></td>
                 <td><?php echo $r['nama_status'] ?></td>
-                <td> null </td>
+                <td>Rp. <?php echo $r['total_tagihan'] ?> </td>
                 <td>
                     <a href="update.php?id=<?php echo $r['id_pesan'] ?>" class="btn btn-warning">Edit</a>
                     </br>

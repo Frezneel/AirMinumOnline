@@ -60,10 +60,10 @@
         }
 
         // function to insert a new record into the pesanan database
-        public function insertPesanan($namadepan_p,$namabelakang_p,$tgps,$tagihan,$nohp_p,$alamat_p){
+        public function insertPesanan($namadepan_p,$namabelakang_p,$tgps,$tagihan,$nohp_p,$alamat_p,$jumlah,$total_tagihan){
             try {
                 // define sql statement to be executed
-                $sql = "INSERT INTO pesanan (username,namadepan,namabelakang,tgps,id_tagihan,nohp,alamat) VALUES (:username, :namadepan, :namabelakang, :tgps, :tagihan, :nohp, :alamat)";
+                $sql = "INSERT INTO pesanan (username,namadepan,namabelakang,tgps,id_tagihan,nohp,alamat,jumlah,total_tagihan) VALUES (:username, :namadepan, :namabelakang, :tgps, :tagihan, :nohp, :alamat, :jumlah, :total_tagihan)";
                 //prepare the sql statement for execution
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
@@ -74,6 +74,8 @@
                 $stmt->bindparam(':tagihan',$tagihan);
                 $stmt->bindparam(':nohp',$nohp_p);
                 $stmt->bindparam(':alamat',$alamat_p);
+                $stmt->bindparam(':jumlah',$jumlah);
+                $stmt->bindparam(':total_tagihan',$total_tagihan);
 
                 // execute statement
                 $stmt->execute();
@@ -88,7 +90,7 @@
         public function getPesanan(){
             try{
                 $sql = "SELECT pesanan.id_pesan, pesanan.username, pesanan.namadepan, pesanan.namabelakang, pesanan.tgps, 
-                pesanan.nohp, pesanan.alamat, tagihan.nama_tagihan, tagihan.harga_tagihan, status.nama_status FROM pesanan 
+                pesanan.nohp, pesanan.alamat, pesanan.total_tagihan, tagihan.nama_tagihan, tagihan.harga_tagihan, status.nama_status FROM pesanan 
                 JOIN tagihan ON pesanan.id_tagihan = tagihan.id_tagihan JOIN status ON pesanan.id_status = status.id_status 
                 WHERE username like :username order by tgps DESC ";
                 $stmt = $this->db->prepare($sql);
@@ -123,7 +125,7 @@
         public function getPesananPelanggan(){
             try{
                 $sql = "SELECT pesanan.id_pesan, pesanan.username, pesanan.namadepan, pesanan.namabelakang, pesanan.tgps, 
-                pesanan.nohp, pesanan.alamat, tagihan.nama_tagihan, tagihan.harga_tagihan, status.nama_status FROM pesanan 
+                pesanan.nohp, pesanan.alamat, pesanan.total_tagihan, tagihan.nama_tagihan, tagihan.harga_tagihan, status.nama_status FROM pesanan 
                 JOIN tagihan ON pesanan.id_tagihan = tagihan.id_tagihan JOIN status ON pesanan.id_status = status.id_status 
                 order by tgps DESC ";
                 $stmt = $this->db->prepare($sql);
@@ -160,6 +162,7 @@
             }
              
          }
+
 
          public function deletePesanan($id){
             try{
