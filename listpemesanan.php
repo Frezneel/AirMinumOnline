@@ -23,8 +23,9 @@
             <th>Jasa</th>
             <th>No HP</th>
             <th>Alamat</th>
-            <th>Status</th>
             <th>Total Tagihan</th>
+            <th>Status</th>
+            
         </tr>
         </thead">
         <tbody style="background-color: white ;">
@@ -36,8 +37,9 @@
                 <td><?php echo $r['nama_tagihan'] ?></td>
                 <td><?php echo $r['nohp'] ?></td>
                 <td><?php echo $r['alamat'] ?></td>
+                <td>RP. <?php echo $r['total_tagihan']?> </td>
                 <td><?php echo $r['nama_status'] ?></td>
-                <td> null </td>
+                
            </tr> 
         <?php }?>
         </tbody> 

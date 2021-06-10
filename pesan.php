@@ -12,7 +12,7 @@
     </h3>
 </div>
 <div class="card-body" style="color: black; background-color: white">
-    <form method="post" action="pemesanan_berhasil.php" enctype="multipart/form-data">
+    <form method="post" action="tampil_pesan.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="namadepan">Nama Depan</label>
             <input required type="text" class="form-control" id="namadepan" name="namadepan">
@@ -34,8 +34,12 @@
                 <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
                    <option value="<?php echo $r['id_tagihan'] ?>"><?php echo $r['nama_tagihan']; ?></option>
                 <?php }?>
-            </select>
-                        
+            </select>       
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="jumlah">Jumlah Barang</label>
+            <input type="number" class="form-control" id="jumlah" name="jumlah">
         </div>
         <br>
         <div class="form-group">

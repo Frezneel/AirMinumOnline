@@ -11,8 +11,10 @@
         $tagihan = $_POST['tagihan'];
         $nohp_p = $_POST['nohp'];
         $alamat_p = $_POST['alamat'];
+        $jumlah = $_POST['jumlah'];
+        $total_tagihan = $_POST['total_tagihan'];
         //call function to insert and track if success or not
-        $isPemesananBerhasil = $crud->insertPesanan($namadepan_p,$namabelakang_p,$tgps,$tagihan,$nohp_p,$alamat_p);
+        $isPemesananBerhasil = $crud->insertPesanan($namadepan_p,$namabelakang_p,$tgps,$tagihan,$nohp_p,$alamat_p,$jumlah,$total_tagihan);
         $NamaTagihan = $crud->getNamaTagihan($tagihan);
         if($isPemesananBerhasil){
             echo '<h2 class="text-center text-success" > Anda Sukses Membuat Pesanan </h2>';
@@ -32,16 +34,19 @@
                 <?php echo $_POST['namadepan'].' '. $_POST['namabelakang']?> 
             </h6>
             <p class="card-text">
-            <?php echo $_POST['tgps']?>
+            Tanggal Pesan : <?php echo $_POST['tgps']?>
             </p>
             <p class="card-text">
             <?php echo $NamaTagihan['nama_tagihan'];?>
             </p>
             <p class="card-text">
-            <?php echo $_POST['nohp'] ?>
+            No HP : <?php echo $_POST['nohp'] ?>
             </p>
             <p class="card-text">
             <?php echo $_POST['alamat'] ?>
+            </p>
+            <p class="card-text" >
+            Total Tagihan : <?php echo $_POST['jumlah'] * $NamaTagihan['harga_tagihan'] ?>
             </p>
         </div>
     </div>

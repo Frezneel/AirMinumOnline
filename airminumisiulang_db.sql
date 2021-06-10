@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 10:40 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Waktu pembuatan: 10 Jun 2021 pada 08.03
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftarakun`
+-- Struktur dari tabel `daftarakun`
 --
 
 CREATE TABLE `daftarakun` (
@@ -41,7 +41,7 @@ CREATE TABLE `daftarakun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `daftarakun`
+-- Dumping data untuk tabel `daftarakun`
 --
 
 INSERT INTO `daftarakun` (`akun_id`, `username`, `password`, `namadepan`, `namabelakang`, `tglh`, `email`, `nohp`, `alamat`, `id_posisi`) VALUES
@@ -52,12 +52,13 @@ INSERT INTO `daftarakun` (`akun_id`, `username`, `password`, `namadepan`, `namab
 (6, 'test1', '2903d26dd0714fd507870d3c282f9815', 'huahua', 'ahuahu', '2021-05-12', 'afwafawfaw@gmail.com', 6464654, 'awhdjawdhkjaw', 2),
 (7, 'bayuaman', '25f9e794323b453885f5181f1b624d0b', 'bayu', 'aman', '2000-05-03', 'bayuaman12@gmail.com', 858585, 'Jl. Kertoaji', 2),
 (8, 'Miranti', '1813204e1c74fb95829e652355155c9c', 'Miranti', 'Sukmaningrum', '2000-07-21', 'MirantiSukmaningrum@gmail.com', 2147483647, 'Jl. Anggrek No.20', 1),
-(9, 'NurWijaya', '9d1298781c7d091b62327c9b01b0978a', 'Nur', 'Wijayaningsih', '2000-03-07', 'NurWijayaningsih@gmail.com', 2147483647, 'Jl. Kemangi No. 105', 1);
+(9, 'NurWijaya', '9d1298781c7d091b62327c9b01b0978a', 'Nur', 'Wijayaningsih', '2000-03-07', 'NurWijayaningsih@gmail.com', 2147483647, 'Jl. Kemangi No. 105', 1),
+(10, 'jaka', '25f9e794323b453885f5181f1b624d0b', 'jaka', 'kunto', '2001-05-09', 'jaka.kunto@gmail.com', 464564121, 'Jl. Kalimantan', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Struktur dari tabel `pesanan`
 --
 
 CREATE TABLE `pesanan` (
@@ -70,21 +71,26 @@ CREATE TABLE `pesanan` (
   `nohp` int(15) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `catatan` text DEFAULT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total_tagihan` int(11) NOT NULL,
   `id_status` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pesanan`
+-- Dumping data untuk tabel `pesanan`
 --
 
-INSERT INTO `pesanan` (`id_pesan`, `username`, `namadepan`, `namabelakang`, `tgps`, `id_tagihan`, `nohp`, `alamat`, `catatan`, `id_status`) VALUES
-(18, 'frezneel', 'test 4', 'lagi', '2021-05-07', 3, 556464, 'J.L Kaliagung', NULL, 1),
-(23, 'bayuaman', 'Bayu', 'Aman', '2021-05-27', 2, 858585, 'Jl. Sarumbat', '', 2);
+INSERT INTO `pesanan` (`id_pesan`, `username`, `namadepan`, `namabelakang`, `tgps`, `id_tagihan`, `nohp`, `alamat`, `catatan`, `jumlah`, `total_tagihan`, `id_status`) VALUES
+(18, 'frezneel', 'test 4', 'lagi', '2021-05-07', 3, 556464, 'J.L Kaliagung', NULL, 0, 0, 1),
+(23, 'bayuaman', 'Bayu', 'Aman', '2021-05-27', 2, 858585, 'Jl. Sarumbat', '', 0, 0, 2),
+(24, 'bayuaman', 'bayu', 'aman', '2021-05-27', 1, 85787548, 'Jl. K.H Agus Salim No 48, Ngadirejo, Kepanjen Kidul, Kota Blitar', '', 0, 0, 2),
+(25, 'bayuaman', 'Bayu', 'Aman', '2021-05-28', 2, 5465485, 'Jl. Majapahit', '', 0, 0, 2),
+(26, 'bayuaman', 'bayu', 'aman', '2021-06-10', 2, 2147483647, 'Jl. K.H Agus Salim', NULL, 2, 50000, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posisi`
+-- Struktur dari tabel `posisi`
 --
 
 CREATE TABLE `posisi` (
@@ -93,7 +99,7 @@ CREATE TABLE `posisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `posisi`
+-- Dumping data untuk tabel `posisi`
 --
 
 INSERT INTO `posisi` (`id_posisi`, `nama_posisi`) VALUES
@@ -103,7 +109,7 @@ INSERT INTO `posisi` (`id_posisi`, `nama_posisi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status`
+-- Struktur dari tabel `status`
 --
 
 CREATE TABLE `status` (
@@ -112,7 +118,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `status`
+-- Dumping data untuk tabel `status`
 --
 
 INSERT INTO `status` (`id_status`, `nama_status`) VALUES
@@ -124,7 +130,7 @@ INSERT INTO `status` (`id_status`, `nama_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tagihan`
+-- Struktur dari tabel `tagihan`
 --
 
 CREATE TABLE `tagihan` (
@@ -134,27 +140,27 @@ CREATE TABLE `tagihan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tagihan`
+-- Dumping data untuk tabel `tagihan`
 --
 
 INSERT INTO `tagihan` (`id_tagihan`, `nama_tagihan`, `harga_tagihan`) VALUES
 (1, 'Isi Ulang air minum Galon', 10000),
 (2, 'Pencucian Dispenser', 25000),
-(3, 'Service Dispenser', 0);
+(3, 'Service Dispenser', 40000);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `daftarakun`
+-- Indeks untuk tabel `daftarakun`
 --
 ALTER TABLE `daftarakun`
   ADD PRIMARY KEY (`akun_id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `pesanan`
+-- Indeks untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id_pesan`),
@@ -162,53 +168,53 @@ ALTER TABLE `pesanan`
   ADD KEY `fk_id_status` (`id_status`);
 
 --
--- Indexes for table `posisi`
+-- Indeks untuk tabel `posisi`
 --
 ALTER TABLE `posisi`
   ADD PRIMARY KEY (`id_posisi`);
 
 --
--- Indexes for table `status`
+-- Indeks untuk tabel `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id_status`);
 
 --
--- Indexes for table `tagihan`
+-- Indeks untuk tabel `tagihan`
 --
 ALTER TABLE `tagihan`
   ADD PRIMARY KEY (`id_tagihan`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `daftarakun`
+-- AUTO_INCREMENT untuk tabel `daftarakun`
 --
 ALTER TABLE `daftarakun`
-  MODIFY `akun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `akun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `pesanan`
+-- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `posisi`
+-- AUTO_INCREMENT untuk tabel `posisi`
 --
 ALTER TABLE `posisi`
   MODIFY `id_posisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `status`
+-- AUTO_INCREMENT untuk tabel `status`
 --
 ALTER TABLE `status`
   MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tagihan`
+-- AUTO_INCREMENT untuk tabel `tagihan`
 --
 ALTER TABLE `tagihan`
   MODIFY `id_tagihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
